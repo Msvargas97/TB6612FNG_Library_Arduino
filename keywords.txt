@@ -1,0 +1,35 @@
+#######################################
+# Syntax Coloring Map For Matrix
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+TB6612FNG	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+Rotate	KEYWORD2
+Stop	KEYWORD2
+setSpeed	KEYWORD2
+ChangeSpeedRegulation	KEYWORD2
+GetSpeedRegulation	KEYWORD2
+setOutput	KEYWORD2
+ControlPID	KEYWORD2
+FollowerLinePID	KEYWORD2
+leftMotorSpeed	KEYWORD2
+rightMotorSpeed	KEYWORD2
+motors	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+FORWARD	LITERAL1
+REVERSE	LITERAL1
+PWM_FREQUENCY_MAX	LITERAL1
+PWM_FREQUENCY_DEFAULT	LITERAL1
+PWM_FREQUENCY_MIN	LITERAL1
