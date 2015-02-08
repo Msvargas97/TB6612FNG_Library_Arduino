@@ -25,11 +25,13 @@ http://forum.arduino.cc/index.php/topic,16612.0.html#4
 #define PWM_FREQUENCY_MAX 1
 #define PWM_FREQUENCY_DEFAULT 64
 #define PWM_FREQUENCY_MIN 1024
-
+#define LIBRARY_VERSION 2.0.0
 
 class TB6612FNG
 {
  private:
+
+   void setPwmFrequency(byte pin, int divisor);
    byte Pins[6];
    byte mode;
    boolean rotating;
@@ -38,29 +40,37 @@ class TB6612FNG
    int speed1;
    int speed2;
    int speed_regulation;
-   void setPwmFrequency(byte pin, int divisor);
-   int motorSpeed;
-   float _Kp;
-   float _Kd;
-   float _Ki;
-   int _setPoint;
-   int error;
-   int lastError;
+   int entero;
+   int decimal; 
+   double _Kp;
+   double _Kd;
+   double _Ki;
+   double _setPoint;
+   double lastError;
    long integral;
-   
+   double ref;
+   unsigned long _maxTime;
+   boolean followerLine;
+   boolean Flag;
+
  public:
 
    TB6612FNG( byte PinsIn[], int freq_PWM);
+   ~TB6612FNG();
    void Stop();
    void setSpeed(int n_spd1, int n_spd2);
    void ChangeSpeedRegulation(int n_spd_reg);
    byte GetSpeedRegulation();
-   void ControlPID(int input);
+   bool ControlPID(double input);
    void setOutput(byte pin, boolean state);
-   void FollowerLinePID(int setPoint,float Kp,float Kd, float Ki);
+   void FollowerLinePID(double setPoint, double InputMax, double Kp, double Ki, double Kd,int maxTime=0);
+   int numpd(double x);
    int rightMotorSpeed;
    int leftMotorSpeed;
+   double motorSpeed;
+   double error;
+   unsigned long Time;
+   unsigned int cont;
 };
-
 
 #endif 

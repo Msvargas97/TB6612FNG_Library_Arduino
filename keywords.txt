@@ -23,6 +23,7 @@ FollowerLinePID	KEYWORD2
 leftMotorSpeed	KEYWORD2
 rightMotorSpeed	KEYWORD2
 motors	KEYWORD2
+error	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
@@ -33,3 +34,4 @@ REVERSE	LITERAL1
 PWM_FREQUENCY_MAX	LITERAL1
 PWM_FREQUENCY_DEFAULT	LITERAL1
 PWM_FREQUENCY_MIN	LITERAL1
+cont	LITERAL1
